@@ -197,10 +197,10 @@ extern "C" {
 #define MX25UW25645G_OCTA_READ_PASSWORD_REGISTER_CMD           0x27D8U   /*!< Octa Read Password                              */
 #define MX25UW25645G_OCTA_WRITE_PASSWORD_REGISTER_CMD          0x28D7U   /*!< Octa Write Password                             */
 #define MX25UW25645G_OCTA_PASSWORD_UNLOCK_CMD                  0x29D6U   /*!< Octa Unlock Password                            */
-#define MX25UW25645G_PAGE_BUFFER_READ                          0x25DAU   /*!< Octa Page Buffer Read                           */
-#define MX25UW25645G_WRITE_BUFFER_INITIAL                      0x22DDU   /*!< Octa Write Buffer Initial                       */
-#define MX25UW25645G_WRITE_BUFFER_CONTINUE                     0x24DBU   /*!< Octa Write Buffer Continue                      */
-#define MX25UW25645G_WRITE_BUFFER_CONFIRM                      0x31CEU   /*!< Octa Write Buffer Confirm                       */
+#define MX25UW25645G_OCTA_PAGE_BUFFER_READ                     0x25DAU   /*!< Octa Page Buffer Read                           */
+#define MX25UW25645G_OCTA_WRITE_BUFFER_INITIAL                 0x22DDU   /*!< Octa Write Buffer Initial                       */
+#define MX25UW25645G_OCTA_WRITE_BUFFER_CONTINUE                0x24DBU   /*!< Octa Write Buffer Continue                      */
+#define MX25UW25645G_OCTA_WRITE_BUFFER_CONFIRM                 0x31CEU   /*!< Octa Write Buffer Confirm                       */
 
 /******************************************************************************
   * @brief  MX25UW25645G Registers
@@ -406,9 +406,9 @@ int32_t MX25UW25645G_BlockErase(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_
                                 MX25UW25645G_AddressSize_t AddressSize, uint32_t BlockAddress,
                                 MX25UW25645G_Erase_t BlockSize);
 int32_t MX25UW25645G_ChipErase(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_t Mode, MX25UW25645G_Transfer_t Rate);
-int32_t MX25UW25645G_EnableMemoryMappedModeSTR(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_t Mode,
+int32_t MX25UW25645G_EnableSTRMemoryMappedMode(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_t Mode,
                                                MX25UW25645G_AddressSize_t AddressSize);
-int32_t MX25UW25645G_EnableMemoryMappedModeDTR(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_t Mode);
+int32_t MX25UW25645G_EnableDTRMemoryMappedMode(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_t Mode);
 int32_t MX25UW25645G_Suspend(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_t Mode, MX25UW25645G_Transfer_t Rate);
 int32_t MX25UW25645G_Resume(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_t Mode, MX25UW25645G_Transfer_t Rate);
 
