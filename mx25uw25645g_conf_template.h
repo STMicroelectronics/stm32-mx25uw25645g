@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    mx25uw25645g_conf.h
+  * @file    mx25uw25645g_conf_template.h
   * @author  MCD Application Team
   * @brief   MX25UW25645G OctoSPI memory configuration template file.
   *          This file should be copied to the application folder and renamed

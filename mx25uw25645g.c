@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * @file    mx25uw25645g.c
-  * @modify  MCD Application Team
+  * @author  MCD Application Team
   * @brief   This file provides the MX25UW25645G OctoSPI drivers.
   ******************************************************************************
   * @attention
@@ -225,7 +225,6 @@ int32_t MX25UW25645G_ReadSTR(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_t M
   * @brief  Reads an amount of data from the OSPI memory on DTR mode.
   *         OPI
   * @param  Ctx Component object pointer
-  * @param  AddressSize Address size
   * @param  pData Pointer to data to be read
   * @param  ReadAddr Read start address
   * @param  Size Size of data to read
@@ -401,6 +400,7 @@ int32_t MX25UW25645G_PageProgramDTR(XSPI_HandleTypeDef *Ctx, uint8_t *pData, uin
   *         SPI/OPI; 1-1-1/8-8-8
   * @param  Ctx Component object pointer
   * @param  Mode Interface mode
+  * @param  Rate Transfer rate STR or DTR
   * @param  AddressSize Address size
   * @param  BlockAddress Block address to erase
   * @param  BlockSize Block size to erase
@@ -496,6 +496,7 @@ int32_t MX25UW25645G_BlockErase(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_
   *         SPI/OPI; 1-0-0/8-0-0
   * @param  Ctx Component object pointer
   * @param  Mode Interface mode
+  * @param  Rate Transfer rate STR or DTR
   * @retval error status
   */
 int32_t MX25UW25645G_ChipErase(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_t Mode, MX25UW25645G_Transfer_t Rate)
@@ -626,7 +627,6 @@ int32_t MX25UW25645G_EnableSTRMemoryMappedMode(XSPI_HandleTypeDef *Ctx, MX25UW25
   * @brief  Enable memory mapped mode for the OSPI memory on DTR mode.
   * @param  Ctx Component object pointer
   * @param  Mode Interface mode
-  * @param  AddressSize Address size
   * @note   Only OPI mode support DTR transfer rate
   * @retval OSPI memory status
   */
@@ -1238,6 +1238,7 @@ int32_t MX25UW25645G_ReadCfgRegister(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Inter
   * @param  Ctx Component object pointer
   * @param  Mode Interface mode
   * @param  Rate Transfer rate STR or DTR
+  * @param  WriteAddr Write start address
   * @param  Value Value to write to configuration register
   * @retval error status
   */
@@ -1305,6 +1306,7 @@ int32_t MX25UW25645G_WriteCfg2Register(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Int
   * @param  Ctx Component object pointer
   * @param  Mode Interface mode
   * @param  Rate Transfer rate STR or DTR
+  * @param  ReadAddr Read start address
   * @param  Value configuration register 2 value pointer
   * @retval error status
   */
@@ -1507,8 +1509,8 @@ int32_t MX25UW25645G_ReadSecurityRegister(XSPI_HandleTypeDef *Ctx, MX25UW25645G_
   *         SPI/OPI; 1-0-1/1-0-8
   * @param  Ctx Component object pointer
   * @param  Mode Interface mode
+  * @param  Rate Transfer rate STR or DTR
   * @param  ID 3 bytes IDs pointer
-  * @param  DualFlash Dual flash mode state
   * @retval error status
   */
 int32_t MX25UW25645G_ReadID(XSPI_HandleTypeDef *Ctx, MX25UW25645G_Interface_t Mode, MX25UW25645G_Transfer_t Rate,

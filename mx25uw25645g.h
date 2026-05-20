@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * @file    mx25uw25645g.h
-  * @modify  MCD Application Team
+  * @author  MCD Application Team
   * @brief   This file contains all the description of the
   *          MX25UW25645G OctoSPI memory.
   ******************************************************************************
